@@ -1,0 +1,32 @@
+[debug] [2026-03-06T12:08:13.305Z] ----------------------------------------------------------------------
+[debug] [2026-03-06T12:08:13.306Z] Command:       /Users/fern-leigh/.nvm/versions/node/v24.14.0/bin/node /opt/homebrew/bin/firebase init
+[debug] [2026-03-06T12:08:13.307Z] CLI Version:   15.9.0
+[debug] [2026-03-06T12:08:13.307Z] Platform:      darwin
+[debug] [2026-03-06T12:08:13.307Z] Node Version:  v24.14.0
+[debug] [2026-03-06T12:08:13.307Z] Time:          Fri Mar 06 2026 12:08:13 GMT+0000 (Greenwich Mean Time)
+[debug] [2026-03-06T12:08:13.307Z] ----------------------------------------------------------------------
+[debug] 
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /Users/fern-leigh/workspace/projects/fern-leigh-dev/fernleigh-dev-v2
+
+[debug] [2026-03-06T12:39:20.562Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (/Users/fern-leigh/.config/yarn/global/node_modules/@inquirer/core/dist/commonjs/lib/create-prompt.js:101:37)
+    at Interface.emit (node:events:508:28)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1327:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:284:20)
+    at ReadStream.emit (node:events:520:35)
+    at emitKeys (node:internal/readline/utils:371:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+    at ReadStream.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:563:12)
+[error] 
+[error] Error: An unexpected error has occurred.

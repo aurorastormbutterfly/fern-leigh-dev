@@ -27,6 +27,12 @@ export default function RootLayout({
                 alt="Fern Leigh's logo"
                 width={255}
                 height={75}
+                sizes="(max-width: 768px) 255px,
+                      (max-width: 1200px) 383px" 
+                style={{
+          width: '100%',
+          height: 'auto',
+        }}
               />
             </Link>
           </div>

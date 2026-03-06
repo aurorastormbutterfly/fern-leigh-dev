@@ -1,3 +1,5 @@
+@import '../../styles/variables';
+
 .toggleBtn {
   background: transparent;
   border: none;
@@ -15,6 +17,6 @@
 
   &:hover {
     background: var(--accent-color);
-    color: #0a0a0c;
+    color: #{$baseColor};
   }
 }

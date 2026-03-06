@@ -1,23 +1,18 @@
+@import '../styles/variables';
+
 :root {
-  --bg-color: #112;
+  --bg-color: #{$baseColor};
   --text-color: #ffffff;
-  --accent-color: #b4d42c;
-  --card-bg: #1a1a1c;
+  --accent-color: #{$brightFern};
+  --card-bg: #{$darkFern};
 
   &[data-theme='light'] {
     --bg-color: #ffffff;
-    --text-color: #112;
-    --accent-color: #93A603;
+    --text-color: #{$baseColor};
+    --accent-color: #{$midFern};
     --card-bg: #f4f4f4;
   }
 }
-
-$darkFern :#2C4001;
-$brightFern :#C0D904;
-$midFern : #93A603;
-$brightRust: #F29441;
-$darkRust: #3F1F06;
-$baseColor: #112;
 
 body {
   background-color: var(--bg-color);
