@@ -24,10 +24,10 @@ export default function RootLayout({
             <Link href="/">
               <Image
                 src="/logo.png"
-                alt="Fern Leigh's logo"
-                width={383} // Set the "max" width here as the base
-                height={112} // Adjusted height to maintain aspect ratio for 383px
-                className={styles.logo} // We will use a CSS class for the logic
+                alt="logo showing words 'Fern Leigh Dev - web dev / consultant / mentor'"
+                width={383}
+                height={112}
+                className={styles.logo}
                 priority
                 unoptimized
               />

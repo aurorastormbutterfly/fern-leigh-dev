@@ -1,13 +1,13 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
 :root {
   --bg-color: #{$baseColor};
-  --text-color: #ffffff;
+  --text-color: #fff;
   --accent-color: #{$brightFern};
   --card-bg: #{$darkFern};
 
-  &[data-theme='light'] {
-    --bg-color: #ffffff;
+  &[data-theme="light"] {
+    --bg-color: #fff;
     --text-color: #{$baseColor};
     --accent-color: #{$midFern};
     --card-bg: #f4f4f4;
@@ -17,7 +17,10 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   transition: background-color 0.3s ease;
   margin: 0;
   min-height: 100vh;

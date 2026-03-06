@@ -1,8 +1,4 @@
-@import '../../styles/variables';
-
-.nav {
-  // No special styles needed here for now
-}
+@import "../../styles/variables";
 
 .hamburger {
   display: flex;
@@ -31,13 +27,12 @@
   }
 }
 
-
 .links {
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
+
   &.open {
     display: flex;
     position: absolute;
@@ -58,7 +53,6 @@
     padding: 0;
   }
 }
-
 
 .navLink {
   color: var(--text-color);
