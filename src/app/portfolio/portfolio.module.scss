@@ -1,11 +1,21 @@
+@import '../../styles/variables';
+
 .gallery {
-  padding: 2rem;
+  padding: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
 .card {

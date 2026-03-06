@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.scss";
 import styles from "./layout.module.scss";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
@@ -21,8 +22,12 @@ export default function RootLayout({
         <header className={styles.header}>
           <div className={styles.brand}>
             <Link href="/">
-              <h1 className={styles.title}>FERN-LEIGH.DEV</h1>
-              <p className={styles.subtitle}>WEB DEV / CONSULTANT / MENTOR</p>
+              <Image
+                src="/logo.png"
+                alt="Fern Leigh's logo"
+                width={255}
+                height={75}
+              />
             </Link>
           </div>
           <nav className={styles.nav}>

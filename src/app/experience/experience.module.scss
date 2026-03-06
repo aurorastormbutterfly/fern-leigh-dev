@@ -1,5 +1,11 @@
+@import '../../styles/variables';
+
 .experience {
-  padding: 2rem;
+  padding: 1rem;
+
+  @media (min-width: $breakpoint-md) {
+    padding: 2rem;
+  }
 }
 
 .resumeBtn {
