@@ -25,14 +25,10 @@ export default function RootLayout({
               <Image
                 src="/logo.png"
                 alt="Fern Leigh's logo"
-                width={255}
-                height={75}
-                sizes="(max-width: 768px) 255px,
-                      (max-width: 1200px) 383px"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
+                width={383} // Set the "max" width here as the base
+                height={112} // Adjusted height to maintain aspect ratio for 383px
+                className={styles.logo} // We will use a CSS class for the logic
+                priority
                 unoptimized
               />
             </Link>

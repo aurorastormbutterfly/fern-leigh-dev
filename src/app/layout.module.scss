@@ -1,4 +1,4 @@
-@import '../styles/variables';
+@import "../styles/variables";
 
 .header {
   padding: 1rem;
@@ -26,9 +26,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  }
+  .logo {
+    height: auto;
+    width: 255px; // Mobile default
 
+    @media (min-width: 768px) {
+      width: 383px; // Desktop size
+    }
+  }
+}
 
 .title {
   color: var(--accent-color);
@@ -56,4 +62,3 @@
     justify-content: flex-end;
   }
 }
-
