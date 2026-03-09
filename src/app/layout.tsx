@@ -20,6 +20,13 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <head>
         <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/favicon.png"
+        ></link>
       </head>
       <body>
         <header className={styles.header}>
