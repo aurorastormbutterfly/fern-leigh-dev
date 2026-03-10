@@ -5,6 +5,8 @@ import "./globals.scss";
 import styles from "./layout.module.scss";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import Navbar from "@/components/Navbar/Navbar";
+import Placeholder from "./placeholder";
+import { SHOW_PLACEHOLDER } from "@/config";
 
 export const metadata: Metadata = {
   title: "Fern Leigh Dev | Portfolio",
@@ -16,6 +18,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (SHOW_PLACEHOLDER) {
+    return (
+      <html lang="en" data-theme="dark">
+        <head>
+          <link rel="icon" href="/favicon.png" />
+          <link rel="apple-touch-icon" href="/favicon.png" />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/favicon.png"
+          ></link>
+        </head>
+        <body>
+          <Placeholder />
+        </body>
+      </html>
+    );
+  }
+
   return (
     <html lang="en" data-theme="dark">
       <head>
