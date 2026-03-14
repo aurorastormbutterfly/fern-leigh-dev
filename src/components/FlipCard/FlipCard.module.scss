@@ -45,39 +45,39 @@
 
 .brightFern {
   .flipCardFront {
-    background-color: $brightFern;
+    background: $brightFern-gradient;
     color: $darkFern;
-    border: 1px solid $darkFern;
+    // border: 1px solid $darkFern;
   }
   .flipCardBack {
-    background-color: $brightRust;
-    color: $darkRust;
-    border: 1px solid $darkRust;
+    background: $darkFern-gradient;
+    color: $brightFern;
+    // border: 1px solid $brightFern;
   }
 }
 
 [data-theme="dark"] {
   .brightFern {
     .flipCardFront {
-      background-color: $darkFern;
+      background: $darkFern-gradient;
       color: $brightFern;
-      border: 1px solid $brightFern;
+      // border: 1px solid $brightFern;
     }
     .flipCardBack {
-      background-color: $darkRust;
-      color: $brightRust;
-      border: 1px solid $brightRust;
+      background: $brightFern-gradient;
+      color: $darkFern;
+      // border: 1px solid $darkFern;
     }
   }
 }
 
 .brightRust {
   .flipCardFront {
-    background-color: $brightRust;
+    background: $brightRust-gradient;
     color: $darkRust;
   }
   .flipCardBack {
-    background-color: $darkRust;
+    background: $darkRust-gradient;
     color: $brightRust;
   }
 }
@@ -85,11 +85,11 @@
 [data-theme="dark"] {
   .brightRust {
     .flipCardFront {
-      background-color: $darkRust;
+      background: $darkRust-gradient;
       color: $brightRust;
     }
     .flipCardBack {
-      background-color: $brightRust;
+      background: $brightRust-gradient;
       color: $darkRust;
     }
   }

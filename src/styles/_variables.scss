@@ -9,3 +9,8 @@ $midFern: #93a603;
 $brightRust: #f29441;
 $darkRust: #3f1f06;
 $baseColor: #112;
+
+$brightFern-gradient: linear-gradient(135deg, $brightFern, $midFern);
+$darkFern-gradient: linear-gradient(135deg, $darkFern, #4a6b01);
+$brightRust-gradient: linear-gradient(135deg, $brightRust, #d07e38);
+$darkRust-gradient: linear-gradient(135deg, $darkRust, #603009);
