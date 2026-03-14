@@ -17,8 +17,18 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
     setIsFlipped(!isFlipped);
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      setIsFlipped(!isFlipped);
+    }
+  };
+
   return (
-    <div className={`${styles.flipCardContainer} ${styles[color]}`} tabIndex={0}>
+    <div
+      className={`${styles.flipCardContainer} ${styles[color]}`}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
+    >
       <div className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`} onClick={handleClick}>
         <div className={`${styles.flipCardInner} ${isFlipped ? styles.isFlipped : ''}`}>
           <div className={styles.flipCardFront}>
