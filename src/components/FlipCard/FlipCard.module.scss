@@ -1,0 +1,54 @@
+@import "../../styles/variables";
+
+.flipCard {
+  background-color: transparent;
+  min-width: 24vw;
+  min-height: 36vh;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flipCard.horizontal .flipCardInner.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.flipCard.vertical .flipCardInner.isFlipped {
+  transform: rotateX(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.flipCardFront {
+  background-color: $brightFern;
+  color: black;
+}
+
+.flipCardBack {
+  background-color: $darkRust;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flipCard.vertical .flipCardBack {
+  transform: rotateX(180deg);
+}
