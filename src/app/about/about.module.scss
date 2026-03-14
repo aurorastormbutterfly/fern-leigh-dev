@@ -1,7 +1,10 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .about {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (min-width: $breakpoint-md) {
     padding: 2rem;
@@ -10,8 +13,16 @@
 
 .flipCardContainer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
   margin: 2rem 0;
+  perspective: 62.5rem;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
 }

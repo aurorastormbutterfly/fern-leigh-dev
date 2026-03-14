@@ -7,9 +7,10 @@ interface FlipCardProps {
   title: string;
   details: string;
   flipDirection?: 'horizontal' | 'vertical';
+  color?: 'brightFern' | 'brightRust';
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'horizontal' }) => {
+const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'horizontal', color = 'brightFern' }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
@@ -17,7 +18,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
   };
 
   return (
-    <div className={`${styles.flipCard} ${styles[flipDirection]}`} onClick={handleClick}>
+    <div className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`} onClick={handleClick}>
       <div className={`${styles.flipCardInner} ${isFlipped ? styles.isFlipped : ''}`}>
         <div className={styles.flipCardFront}>
           <h2>{title}</h2>

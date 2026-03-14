@@ -10,15 +10,18 @@ export default function About() {
         <FlipCard
           title="QA & Automation"
           details="Expert in React, Next.js, and building accessible user interfaces."
+          color="brightFern"
         />
         <FlipCard
           title="Software Engineering"
           details="Proficient in JavaScript/TypeScript, Java, and Clojure."
           flipDirection="vertical"
+          color="brightRust"
         />
         <FlipCard
           title="Accessibility & EDI"
           details="Internal consultant and policy shaper for disability inclusion."
+          color="brightFern"
         />
       </div>
       <p>

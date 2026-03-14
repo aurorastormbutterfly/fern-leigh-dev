@@ -1,18 +1,16 @@
 @import "../../styles/variables";
 
 .flipCard {
-  background-color: transparent;
-  min-width: 24vw;
-  min-height: 36vh;
-  perspective: 1000px;
-  cursor: pointer;
+  width: 80vw;
+  max-width: 25rem;
+  height: 15rem;
+  position: relative;
 }
 
 .flipCardInner {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
@@ -30,25 +28,51 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  h2, p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
 }
 
-.flipCardFront {
-  background-color: $brightFern;
-  color: black;
+.brightFern {
+  .flipCardFront {
+    background-color: $brightFern-front;
+    color: $darkFern-back;
+  }
+  .flipCardBack {
+    background-color: $darkFern-back;
+    color: $brightFern-front;
+  }
 }
+
+.brightRust {
+  .flipCardFront {
+    background-color: $brightRust-front;
+    color: $darkRust-back;
+  }
+  .flipCardBack {
+    background-color: $darkRust-back;
+    color: $brightRust-front;
+  }
+}
+
 
 .flipCardBack {
-  background-color: $darkRust;
-  color: white;
   transform: rotateY(180deg);
 }
 
 .flipCard.vertical .flipCardBack {
   transform: rotateX(180deg);
+}
+
+.about .flipCardContainer {
+  perspective: 62.5rem;
 }
