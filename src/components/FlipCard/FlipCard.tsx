@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './FlipCard.module.scss';
 
 interface FlipCardProps {
@@ -12,6 +12,21 @@ interface FlipCardProps {
 
 const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'horizontal', color = 'brightFern' }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [reduceMotion, setReduceMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReduceMotion(mediaQuery.matches);
+
+    const handleChange = () => {
+      setReduceMotion(mediaQuery.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => {
+      mediaQuery.removeEventListener('change', handleChange);
+    };
+  }, []);
 
   const handleClick = () => {
     setIsFlipped(!isFlipped);
@@ -28,13 +43,18 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
       className={`${styles.flipCardContainer} ${styles[color]}`}
       tabIndex={0}
       onKeyDown={handleKeyDown}
+      aria-live="polite"
     >
-      <div className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`} onClick={handleClick}>
-        <div className={`${styles.flipCardInner} ${isFlipped ? styles.isFlipped : ''}`}>
-          <div className={styles.flipCardFront}>
+      <div
+        className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`}
+        onClick={handleClick}
+        role="button"
+      >
+        <div className={`${styles.flipCardInner} ${isFlipped && !reduceMotion ? styles.isFlipped : ''}`}>
+          <div className={styles.flipCardFront} aria-hidden={isFlipped}>
             <h2>{title}</h2>
           </div>
-          <div className={styles.flipCardBack}>
+          <div className={styles.flipCardBack} aria-hidden={!isFlipped}>
             <p>{details}</p>
           </div>
         </div>

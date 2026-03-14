@@ -117,45 +117,56 @@
     opacity: 0;
     transition: all 0.5s ease-in-out;
     transform-origin: bottom left;
+    background-color: $darkFern;
+    mask-image: url(/fern-leaf.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
   }
 
   .vine1 {
-    bottom: -1rem;
-    left: -1.5rem;
+    bottom: -0.5rem;
+    left: -0.75rem;
     transform: scale(0) rotate(90deg);
   }
 
   .vine2 {
-    bottom: -1.5rem;
-    left: -1.5rem;
+    bottom: -0.75rem;
+    left: -0.5rem;
     transform: scale(0) rotate(70deg);
   }
 
-  &:hover,
-  &:focus {
-    .vine1 {
-      opacity: 1;
-      transform: scale(1) rotate(0deg);
-    }
-    .vine2 {
-      opacity: 1;
-      transform: scale(1) rotate(-20deg);
+  // For mobile/touch screens
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    &:focus {
+      .vine1 {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      .vine2 {
+        opacity: 1;
+        transform: scale(1) rotate(-20deg);
+      }
     }
   }
 
-  &.brightFern {
-    .vine1,
-    .vine2 {
-      filter: brightness(0) saturate(100%) invert(19%) sepia(13%)
-        saturate(3020%) hue-rotate(44deg) brightness(92%) contrast(90%);
+  // For larger/desktop screens
+  @media (min-width: #{$breakpoint-md}) {
+    &:hover {
+      .vine1 {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+      .vine2 {
+        opacity: 1;
+        transform: scale(1) rotate(-20deg);
+      }
     }
   }
 
   &.brightRust {
     .vine1,
     .vine2 {
-      filter: brightness(0) saturate(100%) invert(72%) sepia(11%)
-        saturate(2237%) hue-rotate(334deg) brightness(97%) contrast(91%);
+      background-color: $brightRust;
     }
   }
 
@@ -163,17 +174,31 @@
     &.brightFern {
       .vine1,
       .vine2 {
-        filter: brightness(0) saturate(100%) invert(88%) sepia(29%)
-          saturate(593%) hue-rotate(13deg) brightness(93%) contrast(88%);
+        background-color: $brightFern;
       }
     }
 
     &.brightRust {
       .vine1,
       .vine2 {
-        filter: brightness(0) saturate(100%) invert(12%) sepia(12%)
-          saturate(2681%) hue-rotate(338deg) brightness(91%) contrast(88%);
+        background-color: $darkRust;
       }
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flipCardInner.isFlipped {
+    transform: none;
+  }
+
+  .flipCardFront[aria-hidden="true"],
+  .flipCardBack[aria-hidden="true"] {
+    display: none;
+  }
+
+  .flipCardFront[aria-hidden="false"],
+  .flipCardBack[aria-hidden="false"] {
+    display: flex;
   }
 }
