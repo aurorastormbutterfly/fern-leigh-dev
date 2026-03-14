@@ -16,7 +16,7 @@ export default function About() {
           title="Software Engineering"
           details="Proficient in JavaScript/TypeScript, Java, and Clojure."
           flipDirection="vertical"
-          color="brightRust"
+          color="brightFern"
         />
         <FlipCard
           title="Accessibility & EDI"

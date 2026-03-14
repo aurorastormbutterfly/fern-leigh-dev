@@ -7,7 +7,7 @@ describe("AboutPage", () => {
 
     expect(
       screen.getByRole("heading", {
-        name: "Full-stack Software Engineer & Technical Educator",
+        name: "About Me",
       }),
     ).toBeInTheDocument();
   });

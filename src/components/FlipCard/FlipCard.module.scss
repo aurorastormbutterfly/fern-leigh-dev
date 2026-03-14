@@ -37,33 +37,63 @@
   padding: 1rem;
   box-sizing: border-box;
 
-  h2, p {
+  h2,
+  p {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
   }
 }
 
 .brightFern {
   .flipCardFront {
-    background-color: $brightFern-front;
-    color: $darkFern-back;
+    background-color: $brightFern;
+    color: $darkFern;
+    border: 1px solid $darkFern;
   }
   .flipCardBack {
-    background-color: $darkFern-back;
-    color: $brightFern-front;
+    background-color: $brightRust;
+    color: $darkRust;
+    border: 1px solid $darkRust;
+  }
+}
+
+[data-theme="dark"] {
+  .brightFern {
+    .flipCardFront {
+      background-color: $darkFern;
+      color: $brightFern;
+      border: 1px solid $brightFern;
+    }
+    .flipCardBack {
+      background-color: $darkRust;
+      color: $brightRust;
+      border: 1px solid $brightRust;
+    }
   }
 }
 
 .brightRust {
   .flipCardFront {
-    background-color: $brightRust-front;
-    color: $darkRust-back;
+    background-color: $brightRust;
+    color: $darkRust;
   }
   .flipCardBack {
-    background-color: $darkRust-back;
-    color: $brightRust-front;
+    background-color: $darkRust;
+    color: $brightRust;
   }
 }
 
+[data-theme="dark"] {
+  .brightRust {
+    .flipCardFront {
+      background-color: $darkRust;
+      color: $brightRust;
+    }
+    .flipCardBack {
+      background-color: $brightRust;
+      color: $darkRust;
+    }
+  }
+}
 
 .flipCardBack {
   transform: rotateY(180deg);
@@ -71,8 +101,4 @@
 
 .flipCard.vertical .flipCardBack {
   transform: rotateX(180deg);
-}
-
-.about .flipCardContainer {
-  perspective: 62.5rem;
 }
