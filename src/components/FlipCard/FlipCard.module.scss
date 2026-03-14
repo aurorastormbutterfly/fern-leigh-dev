@@ -102,3 +102,78 @@
 .flipCard.vertical .flipCardBack {
   transform: rotateX(180deg);
 }
+
+.flipCardContainer {
+  position: relative;
+  width: 80vw;
+  max-width: 25rem;
+  height: 15rem;
+
+  .vine1,
+  .vine2 {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    transform-origin: bottom left;
+  }
+
+  .vine1 {
+    bottom: -1rem;
+    left: -1.5rem;
+    transform: scale(0) rotate(90deg);
+  }
+
+  .vine2 {
+    bottom: -1.5rem;
+    left: -1.5rem;
+    transform: scale(0) rotate(70deg);
+  }
+
+  &:hover,
+  &:focus {
+    .vine1 {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+    .vine2 {
+      opacity: 1;
+      transform: scale(1) rotate(-20deg);
+    }
+  }
+
+  &.brightFern {
+    .vine1,
+    .vine2 {
+      filter: brightness(0) saturate(100%) invert(19%) sepia(13%)
+        saturate(3020%) hue-rotate(44deg) brightness(92%) contrast(90%);
+    }
+  }
+
+  &.brightRust {
+    .vine1,
+    .vine2 {
+      filter: brightness(0) saturate(100%) invert(72%) sepia(11%)
+        saturate(2237%) hue-rotate(334deg) brightness(97%) contrast(91%);
+    }
+  }
+
+  [data-theme="dark"] & {
+    &.brightFern {
+      .vine1,
+      .vine2 {
+        filter: brightness(0) saturate(100%) invert(88%) sepia(29%)
+          saturate(593%) hue-rotate(13deg) brightness(93%) contrast(88%);
+      }
+    }
+
+    &.brightRust {
+      .vine1,
+      .vine2 {
+        filter: brightness(0) saturate(100%) invert(12%) sepia(12%)
+          saturate(2681%) hue-rotate(338deg) brightness(91%) contrast(88%);
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200" width="200" height="400">
+  <defs>
+    <style>
+      .fern-leaf { fill: #2d5a27; }
+      .fern-stem { stroke: #1a3a16; stroke-width: 1.2; fill: none; }
+    </style>
+  </defs>
+
+  <path d="M 50,190 C 50,150 48,80 50,22" class="fern-stem" />
+
+  <g class="fern-leaf">
+    <ellipse cx="36" cy="170" rx="15" ry="6" transform="rotate(-25 36 170)" />
+    <ellipse cx="64" cy="170" rx="15" ry="6" transform="rotate(25 64 170)" />
+
+    <ellipse cx="37" cy="152" rx="14" ry="5.5" transform="rotate(-22 37 152)" />
+    <ellipse cx="63" cy="152" rx="14" ry="5.5" transform="rotate(22 63 152)" />
+
+    <ellipse cx="38" cy="135" rx="13" ry="5" transform="rotate(-20 38 135)" />
+    <ellipse cx="62" cy="135" rx="13" ry="5" transform="rotate(20 62 135)" />
+
+    <ellipse cx="40" cy="118" rx="12" ry="4.5" transform="rotate(-18 40 118)" />
+    <ellipse cx="60" cy="118" rx="12" ry="4.5" transform="rotate(18 60 118)" />
+
+    <ellipse cx="42" cy="102" rx="11" ry="4" transform="rotate(-15 42 102)" />
+    <ellipse cx="58" cy="102" rx="11" ry="4" transform="rotate(15 58 102)" />
+
+    <ellipse cx="43" cy="87" rx="10" ry="3.5" transform="rotate(-12 43 87)" />
+    <ellipse cx="57" cy="87" rx="10" ry="3.5" transform="rotate(12 57 87)" />
+
+    <ellipse cx="44" cy="73" rx="9" ry="3" transform="rotate(-10 44 73)" />
+    <ellipse cx="56" cy="73" rx="9" ry="3" transform="rotate(10 56 73)" />
+
+    <ellipse cx="45" cy="60" rx="8" ry="2.8" transform="rotate(-8 45 60)" />
+    <ellipse cx="55" cy="60" rx="8" ry="2.8" transform="rotate(8 55 60)" />
+
+    <ellipse cx="46" cy="48" rx="7" ry="2.5" transform="rotate(-6 46 48)" />
+    <ellipse cx="54" cy="48" rx="7" ry="2.5" transform="rotate(6 54 48)" />
+
+    <ellipse cx="47" cy="37" rx="6" ry="2" transform="rotate(-4 47 37)" />
+    <ellipse cx="53" cy="37" rx="6" ry="2" transform="rotate(4 53 37)" />
+
+    <ellipse cx="50" cy="20" rx="2.5" ry="9" />
+  </g>
+</svg>

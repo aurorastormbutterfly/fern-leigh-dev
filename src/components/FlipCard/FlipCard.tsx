@@ -18,15 +18,19 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
   };
 
   return (
-    <div className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`} onClick={handleClick}>
-      <div className={`${styles.flipCardInner} ${isFlipped ? styles.isFlipped : ''}`}>
-        <div className={styles.flipCardFront}>
-          <h2>{title}</h2>
-        </div>
-        <div className={styles.flipCardBack}>
-          <p>{details}</p>
+    <div className={`${styles.flipCardContainer} ${styles[color]}`} tabIndex={0}>
+      <div className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`} onClick={handleClick}>
+        <div className={`${styles.flipCardInner} ${isFlipped ? styles.isFlipped : ''}`}>
+          <div className={styles.flipCardFront}>
+            <h2>{title}</h2>
+          </div>
+          <div className={styles.flipCardBack}>
+            <p>{details}</p>
+          </div>
         </div>
       </div>
+      <img src="/fern-leaf.svg" className={styles.vine1} alt="" />
+      <img src="/fern-leaf.svg" className={styles.vine2} alt="" />
     </div>
   );
 };
