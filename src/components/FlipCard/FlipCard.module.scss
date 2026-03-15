@@ -1,10 +1,16 @@
 @import "../../styles/variables";
 
 .flipCard {
-  width: 80vw;
-  max-width: 25rem;
+  width: 100%;
   min-height: 20rem;
   position: relative;
+
+  &.long {
+    @media (min-width: #{$breakpoint-md}) {
+      height: 6rem;
+      min-height: 6rem;
+    }
+  }
 }
 
 .flipCardInner {
@@ -107,6 +113,13 @@
   max-width: 25rem;
   margin-bottom: 2rem;
 
+  &.long {
+    @media (min-width: #{$breakpoint-md}) {
+      width: 90vw;
+      max-width: none;
+    }
+  }
+
   .vine1,
   .vine2 {
     position: absolute;
@@ -164,7 +177,7 @@
   &.brightRust {
     .vine1,
     .vine2 {
-      background-color: $brightRust;
+      background-color: $darkRust;
     }
   }
 
@@ -179,7 +192,7 @@
     &.brightRust {
       .vine1,
       .vine2 {
-        background-color: $darkRust;
+        background-color: $brightRust;
       }
     }
   }

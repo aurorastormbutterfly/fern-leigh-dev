@@ -8,6 +8,7 @@ interface FlipCardProps {
   details: string;
   flipDirection?: "horizontal" | "vertical";
   color?: "brightFern" | "brightRust";
+  type?: "long" | "regular";
 }
 
 const FlipCard: React.FC<FlipCardProps> = ({
@@ -15,6 +16,7 @@ const FlipCard: React.FC<FlipCardProps> = ({
   details,
   flipDirection = "horizontal",
   color = "brightFern",
+  type = "regular",
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -45,13 +47,13 @@ const FlipCard: React.FC<FlipCardProps> = ({
 
   return (
     <div
-      className={`${styles.flipCardContainer} ${styles[color]}`}
+      className={`${styles.flipCardContainer} ${styles[color]} ${styles[type]}`}
       tabIndex={0}
       onKeyDown={handleKeyDown}
       aria-live="polite"
     >
       <div
-        className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]}`}
+        className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]} ${styles[type]}`}
         onClick={handleClick}
         role="button"
       >

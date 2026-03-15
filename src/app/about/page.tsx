@@ -25,14 +25,18 @@ export default function About() {
           color="brightFern"
         />
       </div>
-      <p>
-        Outside of the IDE, I spent eighteen months on a sabbatical that tested
+
+      <FlipCard
+        title="Outside the IDE"
+        details="Outside of the IDE, I spent eighteen months on a sabbatical that tested
         my logistical limits. I hiked the Continental Divide Trail and renovated
         vintage RVs. These experiences required grit, planning, and hands-on
         mechanical problem-solving. I bring that same resilience to my
         engineering teams, seeking out environments that value technical quality
-        and social responsibility.
-      </p>
+        and social responsibility."
+        color="brightRust"
+        type="long"
+      />
     </div>
   );
 }
