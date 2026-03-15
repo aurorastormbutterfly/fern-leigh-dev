@@ -1,1 +1,1 @@
-export const SHOW_PLACEHOLDER = true;
+export const SHOW_PLACEHOLDER = false;

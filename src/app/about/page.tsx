@@ -9,7 +9,7 @@ export default function About() {
       <div className={styles.flipCardContainer}>
         <FlipCard
           title="QA & Automation"
-          details="Expert in React, Next.js, and building accessible user interfaces."
+          details={`Quality is the common thread in my career path. As a Quality Manager, I focused on high-level strategy and ISO 9001 compliance. Moving into Product Management, I took a systems-level view by handling UAT, exploratory testing, and complex data queries. Now, as a Developer, I build quality directly into the architecture through unit, integration, and e2e tests within automated CI/CD pipelines. \n \n I find real satisfaction in this kind of deep analysis. Having worked across processes, systems, and functions gives me a 360-degree perspective that allows me to consider every angle. My goal is always to help make things the best they can possibly be.`}
           color="brightFern"
         />
         <FlipCard

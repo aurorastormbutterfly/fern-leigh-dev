@@ -37,9 +37,11 @@
   padding: 1rem;
   box-sizing: border-box;
 
-  h2,
-  p {
+  h2 {
     font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  p {
+    font-size: clamp(0.6rem, 2.5vw, 0.8rem);
   }
 }
 
@@ -47,12 +49,10 @@
   .flipCardFront {
     background: $brightFern-gradient;
     color: $darkFern;
-    // border: 1px solid $darkFern;
   }
   .flipCardBack {
     background: $darkFern-gradient;
     color: $brightFern;
-    // border: 1px solid $brightFern;
   }
 }
 
@@ -61,12 +61,10 @@
     .flipCardFront {
       background: $darkFern-gradient;
       color: $brightFern;
-      // border: 1px solid $brightFern;
     }
     .flipCardBack {
       background: $brightFern-gradient;
       color: $darkFern;
-      // border: 1px solid $darkFern;
     }
   }
 }
