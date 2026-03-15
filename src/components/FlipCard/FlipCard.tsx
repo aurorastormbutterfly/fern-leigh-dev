@@ -1,30 +1,35 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import styles from './FlipCard.module.scss';
+import React, { useState, useEffect } from "react";
+import styles from "./FlipCard.module.scss";
 
 interface FlipCardProps {
   title: string;
   details: string;
-  flipDirection?: 'horizontal' | 'vertical';
-  color?: 'brightFern' | 'brightRust';
+  flipDirection?: "horizontal" | "vertical";
+  color?: "brightFern" | "brightRust";
 }
 
-const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'horizontal', color = 'brightFern' }) => {
+const FlipCard: React.FC<FlipCardProps> = ({
+  title,
+  details,
+  flipDirection = "horizontal",
+  color = "brightFern",
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
     setReduceMotion(mediaQuery.matches);
 
     const handleChange = () => {
       setReduceMotion(mediaQuery.matches);
     };
 
-    mediaQuery.addEventListener('change', handleChange);
+    mediaQuery.addEventListener("change", handleChange);
     return () => {
-      mediaQuery.removeEventListener('change', handleChange);
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
 
@@ -33,7 +38,7 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
+    if (e.key === "Enter" || e.key === " ") {
       setIsFlipped(!isFlipped);
     }
   };
@@ -50,12 +55,14 @@ const FlipCard: React.FC<FlipCardProps> = ({ title, details, flipDirection = 'ho
         onClick={handleClick}
         role="button"
       >
-        <div className={`${styles.flipCardInner} ${isFlipped && !reduceMotion ? styles.isFlipped : ''}`}>
+        <div
+          className={`${styles.flipCardInner} ${isFlipped && !reduceMotion ? styles.isFlipped : ""}`}
+        >
           <div className={styles.flipCardFront} aria-hidden={isFlipped}>
             <h2>{title}</h2>
           </div>
           <div className={styles.flipCardBack} aria-hidden={!isFlipped}>
-            <p>{details}</p>
+            <p style={{ whiteSpace: "pre-line" }}>{details}</p>
           </div>
         </div>
       </div>

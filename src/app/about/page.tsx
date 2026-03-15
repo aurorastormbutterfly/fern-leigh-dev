@@ -9,7 +9,7 @@ export default function About() {
       <div className={styles.flipCardContainer}>
         <FlipCard
           title="QA & Automation"
-          details={`Quality is the common thread in my career path. As a Quality Manager, I focused on high-level strategy and ISO 9001 compliance. Moving into Product Management, I took a systems-level view by handling UAT, exploratory testing, and complex data queries. Now, as a Developer, I build quality directly into the architecture through unit, integration, and e2e tests within automated CI/CD pipelines. \n \n I find real satisfaction in this kind of deep analysis. Having worked across processes, systems, and functions gives me a 360-degree perspective that allows me to consider every angle. My goal is always to help make things the best they can possibly be.`}
+          details={`The pursuit of quality forms a common thread linking each stage of my career. \n \n I began with a high-level focus on strategy and ISO 9001 compliance as a Quality Manager, before moving into Product Management to take a systems-level view of UAT, exploratory testing, and complex data queries. Now, as a Developer, I build quality directly into the architecture through unit, integration, and e2e tests within automated CI/CD pipelines. This journey also includes my work as a Technical Educator, designing and delivering formal training based on ISTQB and Software Tester standards. \n \n This varied experience provides a 360 degree view of quality. It allows me to indulge a genuine passion for deep analysis and improvement at every level, from high-level business operations to the granular details of system development.`}
           color="brightFern"
         />
         <FlipCard
