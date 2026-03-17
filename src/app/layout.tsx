@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import Navbar from "@/components/Navbar/Navbar";
 import Placeholder from "./placeholder";
 import { SHOW_PLACEHOLDER } from "@/config";
+import { figtree } from "./fonts";
 
 export const metadata: Metadata = {
   title: "Fern Leigh Dev | Portfolio",
@@ -20,7 +21,11 @@ export default function RootLayout({
 }>) {
   if (SHOW_PLACEHOLDER) {
     return (
-      <html lang="en" data-theme="dark">
+      <html
+        lang="en"
+        data-theme="dark"
+        className={`${figtree.className} ${figtree.variable}`}
+      >
         <head>
           <link rel="icon" href="/favicon.png" />
           <link rel="apple-touch-icon" href="/favicon.png" />
@@ -39,7 +44,11 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" data-theme="dark">
+    <html
+      lang="en"
+      data-theme="dark"
+      className={`${figtree.className} ${figtree.variable}`}
+    >
       <head>
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/favicon.png" />
