@@ -6,7 +6,6 @@ import styles from "./layout.module.scss";
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import Navbar from "@/components/Navbar/Navbar";
 import Placeholder from "./placeholder";
-import { SHOW_PLACEHOLDER } from "@/config";
 import { figtree } from "./fonts";
 
 export const metadata: Metadata = {
@@ -19,7 +18,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (SHOW_PLACEHOLDER) {
+  const showPlaceholder = process.env.SHOW_PLACEHOLDER === "true";
+
+  if (showPlaceholder) {
     return (
       <html
         lang="en"
