@@ -9,6 +9,13 @@
     @media (min-width: #{$breakpoint-md}) {
       height: 6rem;
       min-height: 6rem;
+
+      .flipCardBackContent {
+        text-align: left;
+        p {
+          margin: 0;
+        }
+      }
     }
   }
 }
@@ -51,6 +58,29 @@
   }
   p {
     font-size: clamp(0.6rem, 2.5vw, 0.8rem);
+  }
+}
+
+.flipCardBackContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    flex-direction: column;
+  }
+}
+
+.flipCardBackImage {
+  width: 4rem;
+  height: 4rem;
+  margin-right: 1rem;
+
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 }
 

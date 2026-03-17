@@ -34,14 +34,13 @@ export default function About() {
 
       <FlipCard
         title="Outside the IDE"
-        details="Outside of the IDE, I spent eighteen months on a sabbatical that tested
-        my logistical limits. I hiked the Continental Divide Trail and renovated
-        vintage RVs. These experiences required grit, planning, and hands-on
-        mechanical problem-solving. I bring that same resilience to my
-        engineering teams, seeking out environments that value technical quality
-        and social responsibility."
+        details="Outside of engineering, the mountains are my home. I love everything the outdoors has to offer, from the challenge of hiking and climbing to the rush of kayaking and windsurfing. My dog, Lily, is always by my side. In our quieter moments, when we aren't out exploring, she's usually curled up against me while I have my nose buried in a book."
         color="brightRust"
         type="long"
+        image={{
+          src: "/hiking.png",
+          alt: "A watercolor style image of a woman and dog hiking in the mmountains, silhouetted against the setting sun ",
+        }}
       />
     </div>
   );

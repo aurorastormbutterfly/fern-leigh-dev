@@ -9,6 +9,10 @@ interface FlipCardProps {
   flipDirection?: "horizontal" | "vertical";
   color?: "brightFern" | "brightRust";
   type?: "long" | "regular";
+  image?: {
+    src: string;
+    alt: string;
+  };
 }
 
 const FlipCard: React.FC<FlipCardProps> = ({
@@ -17,6 +21,7 @@ const FlipCard: React.FC<FlipCardProps> = ({
   flipDirection = "horizontal",
   color = "brightFern",
   type = "regular",
+  image,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -64,7 +69,16 @@ const FlipCard: React.FC<FlipCardProps> = ({
             <h2>{title}</h2>
           </div>
           <div className={styles.flipCardBack} aria-hidden={!isFlipped}>
-            <p style={{ whiteSpace: "pre-line" }}>{details}</p>
+            <div className={styles.flipCardBackContent}>
+              {image && (
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={styles.flipCardBackImage}
+                />
+              )}
+              <p style={{ whiteSpace: "pre-line" }}>{details}</p>
+            </div>
           </div>
         </div>
       </div>
