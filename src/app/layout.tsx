@@ -79,7 +79,7 @@ export default function RootLayout({
             <ThemeToggle />
           </nav>
         </header>
-        {children}
+        <main>{children}</main>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import FlipCard from "./FlipCard";
+import FlipCard from "@/components/FlipCard/FlipCard";
 
 describe("FlipCard", () => {
   it("renders the title", () => {
