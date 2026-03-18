@@ -11,13 +11,19 @@ describe("PortfolioPage", () => {
     expect(
       screen.getByRole("heading", { name: "Mars Rover Kata" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Image Placeholder")).toBeInTheDocument();
+    expect(
+      screen.getByRole("img", { name: "Mars Rover Kata thumbnail" }),
+    ).toBeInTheDocument();
     expect(screen.getByText("Java")).toBeInTheDocument();
-    expect(screen.getByText("TypeScript")).toBeInTheDocument();
+    expect(screen.getAllByText("TypeScript")[0]).toBeInTheDocument();
     expect(
       screen.getByText("Problem/Solution summary placeholder."),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Repo" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Demo" })).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("link", { name: "Repo" })[0],
+    ).toBeInTheDocument();
+    expect(
+      screen.getAllByRole("link", { name: "Demo" })[0],
+    ).toBeInTheDocument();
   });
 });

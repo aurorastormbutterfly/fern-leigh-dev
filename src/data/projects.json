@@ -1,0 +1,30 @@
+[
+  {
+    "id": "mars-rover-kata",
+    "title": "Mars Rover Kata",
+    "tags": [
+      "Java",
+      "TypeScript"
+    ],
+    "summary": "Problem/Solution summary placeholder.",
+    "repoLink": "#",
+    "demoLink": "#",
+    "imageSrc": "/hiking.png",
+    "imageAlt": "Mars Rover Kata thumbnail"
+  },
+  {
+    "id": "fizzbuzz-kata",
+    "title": "FizzBuzz Kata",
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "CI/CD",
+      "vitest"
+    ],
+    "summary": "A modern, interactive GUI implementation of the classic FizzBuzz kata. This project was built as an introductory exercise to transition my existing React knowledge into the **Next.js** ecosystem. It takes a simple algorithmic challenge and elevates it into a fully-fledged web application featuring dynamic inputs, automated testing, and a component-driven architecture.",
+    "repoLink": "https://github.com/aurorastormbutterfly/fizzbuzz",
+    "demoLink": "https://aurorastormbutterfly.github.io/fizzbuzz/",
+    "imageSrc": "/fizzbuzz-thumbnail.png",
+    "imageAlt": "fizzBuzz logo thumbnail"
+  }
+]

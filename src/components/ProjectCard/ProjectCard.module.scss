@@ -1,0 +1,55 @@
+@import "../../styles/variables";
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+}
+
+.thumbnail {
+  width: 100%;
+  height: 200px;
+  background-color: var(--card-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tags span {
+  background-color: var(--accent-color);
+  color: #{$baseColor};
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.25rem;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+
+    &:hover {
+      background-color: var(--accent-color);
+      color: #{$baseColor};
+    }
+  }
+}

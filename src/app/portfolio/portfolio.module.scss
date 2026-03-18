@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .gallery {
   padding: 1rem;
@@ -10,44 +10,10 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1rem;
 
   @media (min-width: $breakpoint-md) {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   }
-}
-
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--accent-color);
-  padding: 1rem;
-}
-
-.thumbnail {
-  width: 100%;
-  height: 200px;
-  background-color: var(--card-bg);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.tags {
-  display: flex;
-  gap: 0.5rem;
-  margin: 0.5rem 0;
-}
-
-.tags span {
-  background-color: var(--accent-color);
-  color: #{$baseColor};
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-}
-
-.links {
-  display: flex;
-  gap: 1rem;
-  margin-top: 1rem;
 }
