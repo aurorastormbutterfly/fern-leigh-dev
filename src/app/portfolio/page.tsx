@@ -1,8 +1,25 @@
 import styles from "./portfolio.module.scss";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
-import projectsData from "@/data/projects.json";
+import { db } from "@/lib/firebase/firebaseAdmin";
 
-export default function Portfolio() {
+interface ProjectData {
+  title: string;
+  tags: string[];
+  summary: string;
+  repoLink?: string;
+  demoLink?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
+
+export default async function Portfolio() {
+  // Fetch the projects collection directly from Firestore
+  const snapshot = await db.collection("projects").get();
+  const projectsData = snapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...(doc.data() as ProjectData),
+  }));
+
   return (
     <section className={styles.gallery}>
       <h3>Projects</h3>

@@ -1,9 +1,34 @@
 import { render, screen } from "@testing-library/react";
 import PortfolioPage from "@/app/portfolio/page";
 
+jest.mock("../../../lib/firebase/firebaseAdmin", () => ({
+  db: {
+    collection: jest.fn(() => ({
+      get: jest.fn().mockResolvedValue({
+        docs: [
+          {
+            id: "mars-rover-kata",
+            data: () => ({
+              title: "Mars Rover Kata",
+              tags: ["Java", "TypeScript"],
+              summary: "Problem/Solution summary placeholder.",
+              repoLink: "#",
+              demoLink: "#",
+              imageSrc: "/hiking.png",
+              imageAlt: "Mars Rover Kata thumbnail",
+            }),
+          },
+        ],
+      }),
+    })),
+  },
+}));
+
 describe("PortfolioPage", () => {
-  it("renders the heading and project card", () => {
-    render(<PortfolioPage />);
+  it("renders the heading and project card", async () => {
+    // We await the server component before passing it to render
+    const ResolvedPage = await PortfolioPage();
+    render(ResolvedPage);
 
     expect(
       screen.getByRole("heading", { name: "Projects" }),
