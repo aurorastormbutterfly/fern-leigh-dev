@@ -19,6 +19,12 @@ jobs:
         run: yarn test
       - name: Install Playwright Browsers
         run: yarn playwright install --with-deps
+      - name: Setup Firebase Credentials
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT" > service-account.json
+          echo "GOOGLE_APPLICATION_CREDENTIALS=${{ github.workspace }}/service-account.json" > .env.local
       - name: Run Playwright tests
         run: yarn test:e2e
       - uses: actions/upload-artifact@v4
