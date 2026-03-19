@@ -10,16 +10,16 @@ test.describe("Smoke Test - Application Layout", () => {
       // 1. Navigate to the specific route
       await page.goto(route);
 
-      // 2. Wait for the main content area to be visible, to ensure the page is loaded
-      const main = page.getByRole("main");
-      await expect(main).toBeVisible();
-
-      // 3. Verify the header (which has the implicit ARIA role of 'banner') is visible
+      // 2. Verify the header (which has the implicit ARIA role of 'banner') is visible
       const header = page.getByRole("banner");
       await expect(header).toBeVisible();
 
-      // 4. Verify the logo from your RootLayout is present using its alt text
+      // 3. Verify the logo from your RootLayout is present using its alt text
       await expect(page.getByAltText(/Fern Leigh Dev/i)).toBeVisible();
+
+      // 4. Verify the <main> content area is visible
+      const main = page.getByRole("main");
+      await expect(main).toBeVisible();
     });
   }
 });
