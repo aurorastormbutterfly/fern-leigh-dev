@@ -1,13 +1,118 @@
-@import '../styles/variables';
+@import "../styles/Variables";
 
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 1rem;
 
   @media (min-width: $breakpoint-md) {
-    padding: 2rem;
+    padding: 4rem 2rem;
   }
 }
 
 .hero {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: $midFern;
+    margin: 0;
+  }
+
+  .bio {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    align-items: center;
+
+    .bio {
+      max-width: 50vw;
+      text-align: center;
+    }
+  }
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  background: rgba(
+    128,
+    128,
+    128,
+    0.05
+  ); /* Neutral glass feel for both themes */
+  border: 1px solid rgba($midFern, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+
+  &:hover {
+    background: rgba(
+      $darkFern,
+      0.1
+    ); /* Subtle tint that works in both themes */
+    border-color: rgba($brightFern, 0.5);
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    line-height: 1.5;
+    opacity: 0.8;
+    flex-grow: 1; /* Pushes the link to the bottom */
+  }
+}
+
+.link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: $brightRust;
+  transition: color 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: lighten($brightRust, 10%);
+  }
+}
+
+/* Span specific cards on larger screens to create the "Bento" look */
+@media (min-width: $breakpoint-md) {
+  .experience {
+    grid-column: span 2;
+  }
 }
