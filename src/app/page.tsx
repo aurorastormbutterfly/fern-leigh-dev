@@ -44,8 +44,10 @@ export default function Home() {
         <div className={`${styles.card} ${styles.skills}`}>
           <h2>Core Expertise</h2>
           <p>
-            Next.js, React, Test Automation (Cypress/Playwright), CI/CD, and Web
-            Accessibility.
+            Full-stack development primarily in TypeScript, Node.js, and Java.
+            Deep expertise in Next.js, React, test automation
+            (Selenium/Cypress/Playwright), API and Contract testing, CI/CD
+            pipelines, and web accessibility.
           </p>
         </div>
 
