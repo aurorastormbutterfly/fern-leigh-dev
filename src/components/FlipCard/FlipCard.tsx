@@ -5,7 +5,7 @@ import styles from "./FlipCard.module.scss";
 
 interface FlipCardProps {
   title: string;
-  details: string;
+  details: React.ReactNode;
   flipDirection?: "horizontal" | "vertical";
   color?: "brightFern" | "brightRust";
   type?: "long" | "regular";
@@ -77,7 +77,11 @@ const FlipCard: React.FC<FlipCardProps> = ({
                   className={styles.flipCardBackImage}
                 />
               )}
-              <p style={{ whiteSpace: "pre-line" }}>{details}</p>
+              {typeof details === "string" ? (
+                <p style={{ whiteSpace: "pre-line" }}>{details}</p>
+              ) : (
+                details
+              )}
             </div>
           </div>
         </div>
