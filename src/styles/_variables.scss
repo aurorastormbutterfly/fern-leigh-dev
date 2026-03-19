@@ -9,8 +9,20 @@ $midFern: #93a603;
 $brightRust: #f29441;
 $darkRust: #3f1f06;
 $baseColor: #112;
+$brightFernTransp: rgba(192, 217, 4, 0.1);
+$midFernTransp: rgba(147, 166, 3, 0.1);
+$brightRustTransp: rgba(242, 148, 65, 0.1);
+$darkRustTransp: rgba(63, 31, 6, 0.1);
 
-$brightFern-gradient: linear-gradient(135deg, $brightFern, $midFern);
-$darkFern-gradient: linear-gradient(135deg, $darkFern, #4a6b01);
-$brightRust-gradient: linear-gradient(135deg, $brightRust, #d07e38);
+$brightFern-gradient: linear-gradient(
+  135deg,
+  $brightFernTransp,
+  $midFernTransp
+);
+$darkFern-gradient: linear-gradient(135deg, $darkFern, rgb(74, 107, 1));
+$brightRust-gradient: linear-gradient(
+  135deg,
+  $brightRustTransp,
+  rgba(208, 126, 56, 0.2)
+);
 $darkRust-gradient: linear-gradient(135deg, $darkRust, #603009);

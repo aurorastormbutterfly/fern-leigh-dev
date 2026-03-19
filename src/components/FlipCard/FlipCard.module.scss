@@ -4,6 +4,7 @@
   width: 100%;
   min-height: 22rem;
   position: relative;
+  transition: transform 0.3s ease;
 
   @media (min-width: #{$breakpoint-md}) {
     min-height: 20rem;
@@ -56,6 +57,19 @@
   box-sizing: border-box;
   text-align: center;
   overflow-y: auto;
+  background: $brightFern-gradient;
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  border: 2px solid rgba($midFern, 0.2);
+  color: inherit;
+
+  :global([data-theme="dark"]) & {
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.3),
+      0 1px 3px rgba(0, 0, 0, 0.4);
+  }
 
   h2 {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
@@ -97,50 +111,17 @@
 }
 
 .brightFern {
-  .flipCardFront {
-    background: $brightFern-gradient;
-    color: $darkFern;
-  }
+  .flipCardFront,
   .flipCardBack {
-    background: $brightFern-gradient;
-    color: $darkFern;
-  }
-}
-
-[data-theme="dark"] {
-  .brightFern {
-    .flipCardFront {
-      background: $darkFern-gradient;
-      color: $brightFern;
-    }
-    .flipCardBack {
-      background: $darkFern-gradient;
-      color: $brightFern;
-    }
+    border-color: rgba($midFern, 0.2);
   }
 }
 
 .brightRust {
-  .flipCardFront {
-    background: $brightRust-gradient;
-    color: $darkRust;
-  }
+  .flipCardFront,
   .flipCardBack {
     background: $brightRust-gradient;
-    color: $darkRust;
-  }
-}
-
-[data-theme="dark"] {
-  .brightRust {
-    .flipCardFront {
-      background: $darkRust-gradient;
-      color: $brightRust;
-    }
-    .flipCardBack {
-      background: $darkRust-gradient;
-      color: $brightRust;
-    }
+    border-color: rgba($brightRust, 0.2);
   }
 }
 
@@ -157,6 +138,7 @@
   width: 80vw;
   max-width: 25rem;
   margin-bottom: 2rem;
+  cursor: pointer;
 
   &.long {
     @media (min-width: #{$breakpoint-md}) {
@@ -202,6 +184,21 @@
         opacity: 1;
         transform: scale(1) rotate(-20deg);
       }
+      .flipCard {
+        transform: translateY(-6px);
+      }
+      .flipCardFront,
+      .flipCardBack {
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.12),
+          0 4px 8px rgba(0, 0, 0, 0.08);
+
+        :global([data-theme="dark"]) & {
+          box-shadow:
+            0 12px 24px rgba(0, 0, 0, 0.4),
+            0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+      }
     }
   }
 
@@ -215,6 +212,21 @@
       .vine2 {
         opacity: 1;
         transform: scale(1) rotate(-20deg);
+      }
+      .flipCard {
+        transform: translateY(-6px);
+      }
+      .flipCardFront,
+      .flipCardBack {
+        box-shadow:
+          0 12px 24px rgba(0, 0, 0, 0.12),
+          0 4px 8px rgba(0, 0, 0, 0.08);
+
+        :global([data-theme="dark"]) & {
+          box-shadow:
+            0 12px 24px rgba(0, 0, 0, 0.4),
+            0 4px 8px rgba(0, 0, 0, 0.3);
+        }
       }
     }
   }
