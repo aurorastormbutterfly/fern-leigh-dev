@@ -8,7 +8,7 @@ test.describe("Smoke Test - Application Layout", () => {
       page,
     }) => {
       // 1. Navigate to the specific route
-      await page.goto(`http://localhost:3000${route}`);
+      await page.goto(route);
 
       // 2. Verify the header (which has the implicit ARIA role of 'banner') is visible
       const header = page.getByRole("banner");
