@@ -23,6 +23,7 @@ export default async function Portfolio() {
 
   return (
     <section className={styles.gallery}>
+      <h1>Engineering Lab</h1>
       <div className={styles.prose}>
         <p>
           Much of my professional work is covered by NDAs, which limits what I
@@ -51,7 +52,7 @@ export default async function Portfolio() {
           .
         </p>
       </div>
-      <h1>Projects</h1>
+
       <div className={styles.grid}>
         {projectsData.map((project) => (
           <ProjectCard

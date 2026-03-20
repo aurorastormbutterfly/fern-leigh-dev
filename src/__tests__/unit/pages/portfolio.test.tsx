@@ -31,7 +31,7 @@ describe("PortfolioPage", () => {
     render(ResolvedPage);
 
     expect(
-      screen.getByRole("heading", { name: "Projects" }),
+      screen.getByRole("heading", { name: "Engineering Lab" }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Mars Rover Kata" }),
