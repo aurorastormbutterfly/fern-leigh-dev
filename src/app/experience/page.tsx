@@ -13,7 +13,7 @@ export default function Experience() {
       </div>
 
       <div className={styles.actions}>
-        <a href="/resume.pdf" className={styles.resumeBtn}>
+        <a href="/cv.pdf" className={styles.resumeBtn}>
           Download CV
         </a>
       </div>
