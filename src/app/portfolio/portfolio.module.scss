@@ -1,17 +1,39 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 
 .gallery {
   padding: 1rem;
 
+  h1 {
+    text-align: center;
+  }
   @media (min-width: $breakpoint-md) {
     padding: 2rem;
+  }
+}
+
+.prose {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 80vw;
+  margin: 0 auto 2rem auto;
+  text-align: left;
+
+  a {
+    color: $brightRust;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 
   @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));

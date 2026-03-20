@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables" as *;
 
 .cardWrapper {
   position: relative;
@@ -16,7 +16,7 @@
     128,
     0.05
   ); /* Neutral glass feel for both themes */
-  border: 1px solid rgba($midFern, 0.2);
+  border: 1px solid rgba($midFern, 0.4);
   border-radius: 16px;
   overflow: hidden;
   transition:
@@ -92,7 +92,7 @@
 /* Accordion Content */
 .detailsBody {
   /* When closed, the hidden attribute kicks in. When open, we animate in. */
-  border-top: 1px solid rgba($midFern, 0.2);
+  border-top: 1px solid rgba($midFern, 0.4);
   background-color: rgba(128, 128, 128, 0.05);
 }
 
