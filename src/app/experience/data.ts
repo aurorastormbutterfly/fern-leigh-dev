@@ -1,0 +1,78 @@
+import { ExperienceCardProps } from "./ExperienceCard";
+
+export const experiences: ExperienceCardProps[] = [
+  {
+    company: "Fern-Leigh.Dev",
+    location: "Remote, UK",
+    role: "Full-Stack QA & Solutions Engineer",
+    duration: "2026 - Present",
+    details: {
+      duties: [
+        "Executing exploratory and functional test cycles across diverse platforms to identify and document software defects.",
+        "Training Large Language Models via code-specific data annotation, logic verification, and RLHF.",
+        "Generating professional diagnostic media and bug reports adhering to strict crowdtesting quality standards.",
+        "Providing full-stack development and technical consultancy including, CI/CD, Test Automation, and LLM integration",
+        "Building software solutions with a focus on high-fidelity frontend interfaces and robust backend logic.",
+        "Performing technical requirements analysis and strategy for small businesses to ensure long-term system reliability.",
+        "Implement automated data visualisation tools using D3.js and managing deployment on cloud platforms.",
+      ],
+      projects: [
+        "Building a bespoke ERP & CMS with integrated AI to streamline processes for an established Start-up",
+      ],
+      skills: [
+        "Exploratory Testing",
+        "Session-Based Testing",
+        "Functional Test Cycles",
+        "Defect Root Cause Analysis",
+        "Heuristic Evaluation",
+        "UX & UI Quality Audits",
+        "RLHF Data Annotation",
+        "Logic Verification",
+        "Next.js",
+        "TypeScript",
+        "Amazon Aurora",
+        "Amazon Bedrock",
+        "AWS Lambda",
+        "n8n",
+        "Playwright",
+        "D3.js",
+      ],
+    },
+  },
+  {
+    company: "S&A Academy",
+    location: "Remote",
+    role: "Senior Technology Trainer",
+    duration: "2025 - 2026",
+    details: {
+      duties: [
+        "Designed and delivered industry-aligned curricula, including a bespoke four-week intensive bootcamp and advanced modules on OOP, SOLID principles, Debugging, Refactoring, and Design Patterns.",
+        "Designed and delivered specialised training modules focused on software testing, DevOps, and automation.",
+        "Designed and assessed curricula for Level 4 developers, establishing technical benchmarks and quality standards for engineering cohorts.",
+        "Coached apprentices through code reviews and debugging sessions, leading multiple students to achieve Distinction grades at EPA.",
+      ],
+      projects: [
+        "Designed L4 Software Developer Apprenticship Programme",
+        "Designed ISQTB aligned Software Testing Programme",
+      ],
+      skills: [
+        "Object-Oriented Programming",
+        "SOLID Principles",
+        "Design Patterns",
+        "Clean Code & Refactoring",
+        "Technical Curriculum Design",
+        "Pedagogical Instruction",
+        "Code Review & Mentorship",
+        "EPA Standards Assessment",
+        "Debugging Methodologies",
+        "Software Testing (QA)",
+        "DevOps Foundations",
+        "Automated Testing",
+        "JavaScript",
+        "Java",
+        "Python",
+        "React, Node.js, Express.js",
+      ],
+    },
+  },
+];
