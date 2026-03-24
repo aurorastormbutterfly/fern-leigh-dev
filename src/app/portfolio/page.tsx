@@ -9,6 +9,7 @@ interface ProjectData {
   summary: string;
   repoLink?: string;
   demoLink?: string;
+  docsLink?: string;
   imageSrc?: string;
   imageAlt?: string;
 }
@@ -62,6 +63,7 @@ export default async function Portfolio() {
             summary={project.summary}
             repoLink={project.repoLink}
             demoLink={project.demoLink}
+            docsLink={project.docsLink}
             imageSrc={project.imageSrc}
             imageAlt={project.imageAlt}
           />

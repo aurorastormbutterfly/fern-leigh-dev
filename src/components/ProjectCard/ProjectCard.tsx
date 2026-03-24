@@ -7,6 +7,7 @@ interface ProjectCardProps {
   summary: string;
   repoLink?: string;
   demoLink?: string;
+  docsLink?: string;
   thumbnailText?: string;
   imageSrc?: string;
   imageAlt?: string;
@@ -18,6 +19,7 @@ export default function ProjectCard({
   summary,
   repoLink,
   demoLink,
+  docsLink,
   thumbnailText = "Image Placeholder",
   imageSrc,
   imageAlt,
@@ -52,6 +54,11 @@ export default function ProjectCard({
         {demoLink && (
           <a href={demoLink} target="_blank" rel="noopener noreferrer">
             Demo
+          </a>
+        )}
+        {docsLink && (
+          <a href={docsLink} target="_blank" rel="noopener noreferrer">
+            Docs
           </a>
         )}
       </div>
