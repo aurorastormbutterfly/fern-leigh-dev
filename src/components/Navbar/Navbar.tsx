@@ -17,7 +17,11 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <button className={styles.hamburger} onClick={toggleMenu}>
+      <button
+        className={styles.hamburger}
+        onClick={toggleMenu}
+        aria-label={isOpen ? "close navigation menu" : "open navigation menu"}
+      >
         <span></span>
         <span></span>
         <span></span>

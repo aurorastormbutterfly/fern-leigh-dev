@@ -1,25 +1,52 @@
 import { test, expect } from "@playwright/test";
 
-const routes = ["/", "/about", "/experience", "/portfolio"];
+test.describe("Navigation and Clickable Elements", () => {
+  const navLinks = [
+    { name: "About Me", url: "/about" },
+    { name: "Professional Experience", url: "/experience" },
+    { name: "Portfolio", url: "/portfolio" },
+  ];
 
-test.describe("Smoke Test - Application Layout", () => {
-  for (const route of routes) {
-    test(`should render the RootLayout elements successfully on ${route}`, async ({
-      page,
-    }) => {
-      // 1. Navigate to the specific route
-      await page.goto(route);
+  for (const link of navLinks) {
+    test.describe(`Page: ${link.name}`, () => {
+      test.beforeEach(async ({ page, isMobile }) => {
+        await page.goto("/");
+        if (isMobile) {
+          await page
+            .getByRole("button", { name: /open navigation menu/i })
+            .click();
+        }
+        await page.getByRole("link", { name: link.name, exact: true }).click();
+        await expect(page).toHaveURL(new RegExp(link.url, "i"));
+      });
 
-      // 2. Verify the header (which has the implicit ARIA role of 'banner') is visible
-      const header = page.getByRole("banner");
-      await expect(header).toBeVisible();
+      test("should have working links and buttons", async ({ page }) => {
+        const links = await page.getByRole("link").all();
+        for (const link of links) {
+          const href = await link.getAttribute("href");
+          if (href && !href.startsWith("#")) {
+            const response = await page.request.get(href);
+            expect(response.ok()).toBe(true);
+          }
+        }
 
-      // 3. Verify the logo from your RootLayout is present using its alt text
-      await expect(page.getByAltText(/Fern Leigh Dev/i)).toBeVisible();
-
-      // 4. Verify the <main> content area is visible
-      const main = page.getByRole("main");
-      await expect(main).toBeVisible();
+        const buttons = await page.getByRole("button").all();
+        for (const button of buttons) {
+          await expect(button).toBeEnabled();
+        }
+      });
     });
   }
+});
+
+test.describe("Theme Toggle", () => {
+  test("should change the theme when the toggle is clicked", async ({
+    page,
+  }) => {
+    await page.goto("/");
+    const themeToggle = page.getByRole("button", { name: /toggle theme/i });
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
+    await themeToggle.click();
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+  });
 });
