@@ -50,3 +50,41 @@ test.describe("Theme Toggle", () => {
     await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   });
 });
+
+test.describe("Mobile Navigation Menu", () => {
+  test("should open and close the menu without navigation", async ({
+    page,
+    isMobile,
+  }) => {
+    test.skip(!isMobile, "Mobile only test");
+
+    await page.goto("/");
+
+    const openMenuButton = page.getByRole("button", {
+      name: /open navigation menu/i,
+    });
+    await openMenuButton.click();
+
+    await expect(
+      page.getByRole("link", { name: "Home", exact: true })
+    ).toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "About Me", exact: true })
+    ).toBeVisible();
+
+    const closeMenuButton = page.getByRole("button", {
+      name: /close navigation menu/i,
+    });
+    await expect(closeMenuButton).toBeVisible();
+
+    await closeMenuButton.click();
+
+    await expect(
+      page.getByRole("link", { name: "Home", exact: true })
+    ).not.toBeVisible();
+    await expect(
+      page.getByRole("link", { name: "About Me", exact: true })
+    ).not.toBeVisible();
+    await expect(openMenuButton).toBeVisible();
+  });
+});

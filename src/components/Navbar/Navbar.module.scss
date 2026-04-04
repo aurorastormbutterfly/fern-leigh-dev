@@ -1,5 +1,12 @@
 @use "../../styles/variables" as *;
 
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -10,7 +17,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 20;
 
   span {
     width: 2rem;
@@ -27,6 +34,19 @@
   }
 }
 
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
 .links {
   display: none;
   flex-direction: column;
@@ -35,13 +55,14 @@
 
   &.open {
     display: flex;
-    position: absolute;
-    top: 5rem;
+    position: fixed;
+    top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
     background-color: var(--bg-color);
-    padding: 2rem;
-    text-align: center;
+    z-index: 10;
   }
 
   @media (min-width: $breakpoint-md) {
@@ -50,7 +71,6 @@
     position: static;
     width: auto;
     background-color: transparent;
-    padding: 0;
   }
 }
 
