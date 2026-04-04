@@ -13,6 +13,7 @@ interface FlipCardProps {
     src: string;
     alt: string;
   };
+  "data-testid"?: string;
 }
 
 const FlipCard: React.FC<FlipCardProps> = ({
@@ -22,6 +23,7 @@ const FlipCard: React.FC<FlipCardProps> = ({
   color = "brightFern",
   type = "regular",
   image,
+  "data-testid": dataTestId,
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -56,6 +58,7 @@ const FlipCard: React.FC<FlipCardProps> = ({
       tabIndex={0}
       onKeyDown={handleKeyDown}
       aria-live="polite"
+      data-testid={dataTestId}
     >
       <div
         className={`${styles.flipCard} ${styles[flipDirection]} ${styles[color]} ${styles[type]}`}
@@ -64,12 +67,24 @@ const FlipCard: React.FC<FlipCardProps> = ({
       >
         <div
           className={`${styles.flipCardInner} ${isFlipped && !reduceMotion ? styles.isFlipped : ""}`}
+          data-testid={`${dataTestId}-inner`}
         >
-          <div className={styles.flipCardFront} aria-hidden={isFlipped}>
-            <h2>{title}</h2>
+          <div
+            className={styles.flipCardFront}
+            aria-hidden={isFlipped}
+            data-testid={`${dataTestId}-front`}
+          >
+            <h2 data-testid={`${dataTestId}-title`}>{title}</h2>
           </div>
-          <div className={styles.flipCardBack} aria-hidden={!isFlipped}>
-            <div className={styles.flipCardBackContent}>
+          <div
+            className={styles.flipCardBack}
+            aria-hidden={!isFlipped}
+            data-testid={`${dataTestId}-back`}
+          >
+            <div
+              className={styles.flipCardBackContent}
+              data-testid={`${dataTestId}-details`}
+            >
               {image && (
                 <img
                   src={image.src}

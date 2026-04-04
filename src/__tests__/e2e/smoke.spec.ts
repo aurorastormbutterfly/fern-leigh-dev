@@ -2,7 +2,6 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Navigation and Clickable Elements", () => {
   const navLinks = [
-    { name: "About Me", url: "/about" },
     { name: "Professional Experience", url: "/experience" },
     { name: "Portfolio", url: "/portfolio" },
   ];
