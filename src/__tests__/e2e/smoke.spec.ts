@@ -1,39 +1,28 @@
-import { test, expect } from "@playwright/test";
+import { test } from "@playwright/test";
+import { Navigation } from "./poms/Navigation.pom";
+import { verifyAllLinks, verifyAllButtons } from "./helpers";
 
 test.describe("Navigation and Clickable Elements", () => {
-  const navLinks = [
+  const pages = [
+    { name: "Home", url: "/" },
+    { name: "About Me", url: "/about" },
     { name: "Professional Experience", url: "/experience" },
     { name: "Portfolio", url: "/portfolio" },
   ];
 
-  for (const link of navLinks) {
-    test.describe(`Page: ${link.name}`, () => {
-      test.beforeEach(async ({ page, isMobile }) => {
-        await page.goto("/");
-        if (isMobile) {
-          await page
-            .getByRole("button", { name: /open navigation menu/i })
-            .click();
-        }
-        await page.getByRole("link", { name: link.name, exact: true }).click();
-        await expect(page).toHaveURL(new RegExp(link.url, "i"));
-      });
+  for (const { name, url } of pages) {
+    test(`should navigate to ${name} and have working links and buttons`, async ({
+      page,
+      isMobile,
+    }) => {
+      const nav = new Navigation(page);
+      await page.goto("/");
 
-      test("should have working links and buttons", async ({ page }) => {
-        const links = await page.getByRole("link").all();
-        for (const link of links) {
-          const href = await link.getAttribute("href");
-          if (href && !href.startsWith("#")) {
-            const response = await page.request.get(href);
-            expect(response.ok()).toBe(true);
-          }
-        }
+      await nav.navigateTo(name, isMobile);
+      await nav.expectToBeOnPage(url);
 
-        const buttons = await page.getByRole("button").all();
-        for (const button of buttons) {
-          await expect(button).toBeEnabled();
-        }
-      });
+      await verifyAllLinks(page);
+      await verifyAllButtons(page);
     });
   }
 });
@@ -42,11 +31,12 @@ test.describe("Theme Toggle", () => {
   test("should change the theme when the toggle is clicked", async ({
     page,
   }) => {
+    const nav = new Navigation(page);
     await page.goto("/");
-    const themeToggle = page.getByRole("button", { name: /toggle theme/i });
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "light");
-    await themeToggle.click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
+    await nav.expectTheme("light");
+    await nav.toggleTheme();
+    await nav.expectTheme("dark");
   });
 });
 
@@ -57,33 +47,15 @@ test.describe("Mobile Navigation Menu", () => {
   }) => {
     test.skip(!isMobile, "Mobile only test");
 
+    const nav = new Navigation(page);
     await page.goto("/");
 
-    const openMenuButton = page.getByRole("button", {
-      name: /open navigation menu/i,
-    });
-    await openMenuButton.click();
+    await nav.toggleMobileMenu();
 
-    await expect(
-      page.getByRole("link", { name: "Home", exact: true })
-    ).toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "About Me", exact: true })
-    ).toBeVisible();
+    await nav.expectMenuOpen();
 
-    const closeMenuButton = page.getByRole("button", {
-      name: /close navigation menu/i,
-    });
-    await expect(closeMenuButton).toBeVisible();
+    await nav.toggleMobileMenu();
 
-    await closeMenuButton.click();
-
-    await expect(
-      page.getByRole("link", { name: "Home", exact: true })
-    ).not.toBeVisible();
-    await expect(
-      page.getByRole("link", { name: "About Me", exact: true })
-    ).not.toBeVisible();
-    await expect(openMenuButton).toBeVisible();
+    await nav.expectMenuClosed();
   });
 });
