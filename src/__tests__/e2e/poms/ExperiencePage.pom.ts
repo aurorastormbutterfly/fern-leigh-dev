@@ -1,4 +1,4 @@
-import { type Page, type Locator } from "@playwright/test";
+import { expect, type Page, type Locator } from "@playwright/test";
 import { experiences } from "../../../app/experience/data";
 
 export class ExperienceCard {
@@ -14,6 +14,20 @@ export class ExperienceCard {
 
   async toggle() {
     await this.toggleButton.click();
+  }
+
+  async expectCollapsed() {
+    await expect(this.details).toBeHidden();
+    await expect(this.toggleButton).toHaveAttribute("aria-expanded", "false");
+  }
+
+  async expectExpanded() {
+    await expect(this.details).toBeVisible();
+    await expect(this.toggleButton).toHaveAttribute("aria-expanded", "true");
+  }
+
+  async expectContentVisible(text: string) {
+    await expect(this.details).toContainText(text);
   }
 }
 

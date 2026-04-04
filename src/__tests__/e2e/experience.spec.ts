@@ -52,27 +52,24 @@ test.describe("Experience Page", () => {
     test(`should correctly open and close the ${name} card`, async () => {
       const card = experiencePage.getCard(company, role);
 
-      await expect(card.details).toBeHidden();
-      await expect(card.toggleButton).toHaveAttribute("aria-expanded", "false");
+      await card.expectCollapsed();
 
       await card.toggle();
-      await expect(card.details).toBeVisible();
-      await expect(card.toggleButton).toHaveAttribute("aria-expanded", "true");
+      await card.expectExpanded();
 
       // Verify content renders inside the details pane
       for (const duty of duties) {
-        await expect(card.details).toContainText(duty);
+        await card.expectContentVisible(duty);
       }
       for (const project of projects) {
-        await expect(card.details).toContainText(project);
+        await card.expectContentVisible(project);
       }
       for (const skill of skills) {
-        await expect(card.details).toContainText(skill);
+        await card.expectContentVisible(skill);
       }
 
       await card.toggle();
-      await expect(card.details).toBeHidden();
-      await expect(card.toggleButton).toHaveAttribute("aria-expanded", "false");
+      await card.expectCollapsed();
     });
   }
 
