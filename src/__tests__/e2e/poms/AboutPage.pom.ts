@@ -1,10 +1,12 @@
-import { type Page, type Locator } from "@playwright/test";
+import { expect, type Page, type Locator } from "@playwright/test";
 
 export interface Card {
   front: Locator;
   back: Locator;
   inner: Locator;
   flip: () => Promise<void>;
+  expectFrontSideUp: () => Promise<void>;
+  expectBackSideUp: () => Promise<void>;
 }
 
 export class AboutPage {
@@ -41,6 +43,16 @@ export class AboutPage {
       back,
       inner,
       flip: () => card.click(),
+      expectFrontSideUp: async () => {
+        await expect(front).toHaveAttribute("aria-hidden", "false");
+        await expect(back).toHaveAttribute("aria-hidden", "true");
+        await expect(inner).not.toHaveClass(/isFlipped/);
+      },
+      expectBackSideUp: async () => {
+        await expect(front).toHaveAttribute("aria-hidden", "true");
+        await expect(back).toHaveAttribute("aria-hidden", "false");
+        await expect(inner).toHaveClass(/isFlipped/);
+      },
     };
   }
 

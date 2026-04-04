@@ -25,26 +25,13 @@ test.describe("About Page", () => {
     test(`should have clickable ${name} flip card`, async () => {
       const card = aboutPage[cardKey];
 
-      // Initial state: not flipped
-      await expect(card.front).toHaveAttribute("aria-hidden", "false");
-      await expect(card.back).toHaveAttribute("aria-hidden", "true");
-      await expect(card.inner).not.toHaveClass(/isFlipped/);
+      await card.expectFrontSideUp();
 
-      // Flip the card
       await card.flip();
+      await card.expectBackSideUp();
 
-      // Flipped state
-      await expect(card.front).toHaveAttribute("aria-hidden", "true");
-      await expect(card.back).toHaveAttribute("aria-hidden", "false");
-      await expect(card.inner).toHaveClass(/isFlipped/);
-
-      // Flip the card back
       await card.flip();
-
-      // Back to initial state
-      await expect(card.front).toHaveAttribute("aria-hidden", "false");
-      await expect(card.back).toHaveAttribute("aria-hidden", "true");
-      await expect(card.inner).not.toHaveClass(/isFlipped/);
+      await card.expectFrontSideUp();
     });
   }
 });
