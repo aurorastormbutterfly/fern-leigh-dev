@@ -1,4 +1,5 @@
 @use "../styles/variables" as *;
+@use "sass:color";
 
 :root {
   --bg-color: #{$baseColor};
@@ -29,4 +30,30 @@ body {
 body {
   font-family: var(--font-figtree);
   margin: 0;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: $darkRust;
+  transition: color 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+    color: color.adjust($darkRust, $lightness: 10%);
+  }
+
+  [data-theme="dark"] & {
+    color: $brightRust;
+
+    &:hover {
+      text-decoration: underline;
+      color: color.adjust($brightRust, $lightness: 10%);
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
 }

@@ -1,4 +1,5 @@
 import { expect, type Page } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 export const verifyAllLinks = async (page: Page) => {
   const links = await page.getByRole("link").all();
@@ -22,6 +23,11 @@ export const verifyAllLinks = async (page: Page) => {
       `Broken link detected: ${href} (Status: ${status})`,
     ).toBe(true);
   }
+};
+
+export const verifyA11y = async (page: Page) => {
+  const accessibilityScanResults = await new AxeBuilder({ page }).analyze();
+  expect(accessibilityScanResults.violations).toEqual([]);
 };
 
 export const verifyAllButtons = async (page: Page) => {

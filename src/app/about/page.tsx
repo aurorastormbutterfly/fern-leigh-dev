@@ -4,7 +4,7 @@ import FlipCard from "../../components/FlipCard/FlipCard";
 export default function About() {
   return (
     <div className={styles.about}>
-      <h2>About Me</h2>
+      <h1>About Me</h1>
       <p>
         I am Fern Leigh Corcoran, a software developer dedicated to
         accessibility, ethical tech, and engineering excellence. Flip the cards

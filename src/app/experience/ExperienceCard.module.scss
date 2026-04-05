@@ -58,7 +58,11 @@
 
 .company {
   font-size: 0.95rem;
-  color: $brightRust;
+  color: $darkRust;
+
+  :global([data-theme="dark"]) & {
+    color: $brightRust;
+  }
 }
 
 .duration {
@@ -107,13 +111,17 @@
     margin-bottom: 0;
   }
 
-  h4 {
+  h3 {
     margin: 0 0 0.5rem 0;
     font-size: 1rem;
     font-weight: 600;
-    color: $midFern;
+    color: $darkFern;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+
+    :global([data-theme="dark"]) & {
+      color: $midFern;
+    }
   }
 
   ul {

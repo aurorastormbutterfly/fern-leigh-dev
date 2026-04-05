@@ -38,7 +38,7 @@ export default function ProjectCard({
           thumbnailText
         )}
       </div>
-      <h4>{title}</h4>
+      <h2>{title}</h2>
       <div className={styles.tags}>
         {tags.map((tag) => (
           <span key={tag}>{tag}</span>

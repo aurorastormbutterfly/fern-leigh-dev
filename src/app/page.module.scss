@@ -27,8 +27,12 @@
   .tagline {
     font-size: 1.25rem;
     font-weight: 600;
-    color: $midFern;
+    color: $darkFern;
     margin: 0;
+
+    :global([data-theme="dark"]) & {
+      color: $midFern;
+    }
   }
 
   .bio {
@@ -89,15 +93,6 @@
 .link {
   display: inline-block;
   margin-top: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: $brightRust;
-  transition: color 0.2s ease;
-
-  &:hover {
-    text-decoration: underline;
-    color: color.adjust($brightRust, $lightness: 10%);
-  }
 }
 
 /* Span specific cards on larger screens to create the "Bento" look */

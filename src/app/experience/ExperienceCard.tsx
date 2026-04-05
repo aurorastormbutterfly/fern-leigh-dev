@@ -37,7 +37,7 @@ export default function ExperienceCard({
           aria-controls={contentId}
         >
           <div className={styles.primaryInfo}>
-            <h3 className={styles.role}>{role}</h3>
+            <h2 className={styles.role}>{role}</h2>
             <span className={styles.company}>
               {company} &bull; {location}
             </span>
@@ -52,7 +52,7 @@ export default function ExperienceCard({
           <div className={styles.detailsContent}>
             {details.duties && details.duties.length > 0 && (
               <section className={styles.section}>
-                <h4>Key Duties</h4>
+                <h3>Key Duties</h3>
                 <ul>
                   {details.duties.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -62,7 +62,7 @@ export default function ExperienceCard({
             )}
             {details.projects && details.projects.length > 0 && (
               <section className={styles.section}>
-                <h4>Projects</h4>
+                <h3>Projects</h3>
                 <ul>
                   {details.projects.map((item, i) => (
                     <li key={i}>{item}</li>
@@ -72,7 +72,7 @@ export default function ExperienceCard({
             )}
             {details.skills && details.skills.length > 0 && (
               <section className={styles.section}>
-                <h4>Technical Skills</h4>
+                <h3>Technical Skills</h3>
                 <ul className={styles.skillsList}>
                   {details.skills.map((item, i) => (
                     <li key={i}>{item}</li>

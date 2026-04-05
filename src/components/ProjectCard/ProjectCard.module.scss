@@ -36,14 +36,18 @@
 
 .tags span {
   background-color: rgba($midFern, 0.15);
-  color: $midFern;
+  color: $darkFern;
   padding: 0.35rem 0.75rem;
   border-radius: 16px;
   font-size: 0.8rem;
   font-weight: 600;
+
+  :global([data-theme="dark"]) & {
+    color: $brightFern;
+  }
 }
 
-.card h4 {
+.card h2 {
   font-size: 1.5rem;
   margin: 0 0 0.5rem 0;
 }
@@ -60,7 +64,7 @@
   margin-top: 1.5rem;
 
   a {
-    color: $brightRust;
+    color: $darkRust;
     text-decoration: none;
     font-weight: 600;
     padding: 0.5rem 1rem;
@@ -68,11 +72,20 @@
     transition:
       background-color 0.2s,
       color 0.2s;
-    border: 1px solid $brightRust;
+    border: 1px solid $darkRust;
 
     &:hover {
-      background-color: $brightRust;
+      background-color: $darkRust;
       color: white;
+    }
+
+    :global([data-theme="dark"]) & {
+      color: $brightRust;
+      border-color: $brightRust;
+
+      &:hover {
+        background-color: $brightRust;
+      }
     }
   }
 }

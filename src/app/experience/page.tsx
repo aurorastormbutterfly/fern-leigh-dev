@@ -5,7 +5,7 @@ import { experiences } from "./data";
 export default function Experience() {
   return (
     <div className={styles.experience}>
-      <h2>Professional Experience</h2>
+      <h1>Professional Experience</h1>
       <div className={styles.timeline}>
         {experiences.map((exp, index) => (
           <ExperienceCard key={index} {...exp} />

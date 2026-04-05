@@ -1,6 +1,6 @@
 import { test } from "@playwright/test";
 import { Navigation } from "./poms/Navigation.pom";
-import { verifyAllLinks, verifyAllButtons } from "./helpers";
+import { verifyAllLinks, verifyAllButtons, verifyA11y } from "./helpers";
 
 test.describe("Navigation and Clickable Elements", () => {
   const pages = [
@@ -23,6 +23,7 @@ test.describe("Navigation and Clickable Elements", () => {
 
       await verifyAllLinks(page);
       await verifyAllButtons(page);
+      await verifyA11y(page);
     });
   }
 });
