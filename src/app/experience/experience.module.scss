@@ -1,4 +1,4 @@
-@use '../../styles/variables' as *;
+@use "../../styles/variables" as *;
 
 .experience {
   padding: 1rem;
@@ -15,4 +15,9 @@
   color: #{$baseColor};
   text-decoration: none;
   border-radius: 0.25rem;
+
+  :global([data-theme="dark"]) & {
+    background-color: var(--accent-color);
+    color: #{$baseColor};
+  }
 }

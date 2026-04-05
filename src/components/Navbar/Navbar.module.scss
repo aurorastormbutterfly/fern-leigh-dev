@@ -81,8 +81,18 @@
   border-radius: 4px;
   transition: background-color 0.2s ease;
 
+  // Boost specificity to override global dark mode link styles
+  :global([data-theme="dark"]) & {
+    color: var(--text-color);
+  }
+
   &:hover {
     background-color: var(--accent-color);
     color: #{$baseColor};
+
+    :global([data-theme="dark"]) & {
+      background-color: var(--accent-color);
+      color: #{$baseColor};
+    }
   }
 }
