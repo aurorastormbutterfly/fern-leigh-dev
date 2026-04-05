@@ -9,8 +9,18 @@ import Placeholder from "./placeholder";
 import { figtree } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Fern Leigh Dev | Portfolio",
+  title: {
+    template: "%s | Fern Leigh Dev",
+    default: "Fern Leigh Dev | Portfolio",
+  },
   description: "Senior Software Engineer Portfolio",
+  icons: {
+    icon: [
+      { url: "/favicon.png" },
+      { url: "/favicon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,16 +37,6 @@ export default function RootLayout({
         data-theme="dark"
         className={`${figtree.className} ${figtree.variable}`}
       >
-        <head>
-          <link rel="icon" href="/favicon.png" />
-          <link rel="apple-touch-icon" href="/favicon.png" />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/favicon.png"
-          ></link>
-        </head>
         <body>
           <Placeholder />
         </body>
@@ -50,16 +50,6 @@ export default function RootLayout({
       data-theme="dark"
       className={`${figtree.className} ${figtree.variable}`}
     >
-      <head>
-        <link rel="icon" href="/favicon.png" />
-        <link rel="apple-touch-icon" href="/favicon.png" />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="192x192"
-          href="/favicon.png"
-        ></link>
-      </head>
       <body>
         <header className={styles.header}>
           <div className={styles.brand}>

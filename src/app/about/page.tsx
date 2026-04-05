@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import styles from "./about.module.scss";
 import FlipCard from "../../components/FlipCard/FlipCard";
+
+export const metadata: Metadata = {
+  title: "About",
+};
 
 export default function About() {
   return (

@@ -45,6 +45,9 @@ export class Navigation {
     // Use a stricter regex for the Home route to avoid false positive matches
     const urlPattern = url === "/" ? /.*\/$/ : new RegExp(url, "i");
     await expect(this.page).toHaveURL(urlPattern);
+
+    // Wait for the document title to be non-empty (resolves Next.js hydration/routing race conditions)
+    await expect(this.page).toHaveTitle(/.+/);
   }
 
   async expectTheme(theme: "light" | "dark") {

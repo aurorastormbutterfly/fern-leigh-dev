@@ -1,5 +1,10 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import styles from "./page.module.scss";
+
+export const metadata: Metadata = {
+  title: "Home | Fern Leigh Dev",
+};
 
 export default function Home() {
   return (

@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import styles from "./experience.module.scss";
 import ExperienceCard from "./ExperienceCard";
 import { experiences } from "./data";
+
+export const metadata: Metadata = {
+  title: "Experience",
+};
 
 export default function Experience() {
   return (
