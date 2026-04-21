@@ -12,7 +12,7 @@ export default function Home() {
       <section className={styles.hero}>
         <h1>Hi, I'm Fern Leigh.</h1>
         <p className={styles.tagline}>
-          QA & Automation | Senior Software Enineer | A11y SME
+          QA & Automation | Senior Software Engineer | A11y SME
         </p>
         <p className={styles.bio}>
           I build robust, accessible, and highly tested web applications. With a
